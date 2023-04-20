@@ -8,15 +8,9 @@ import { motion, useScroll } from "framer-motion";
 
 const navStyles = {
   position: "fixed",
-  alignItems: "center",
   height: "85px",
   width: "100%",
   backgroundColor: "unset",
-};
-
-const navLinksWrapper = {
-  alignItems: "center",
-  width: "100%",
 };
 
 const Header = () => {
@@ -28,7 +22,7 @@ const Header = () => {
 
   // This onUpdate function will be called in the `scrollY.onChange` callback.
   function update() {
-    if (scrollY?.current < scrollY?.prev ) {
+    if (scrollY?.current < scrollY?.prev) {
       setScrollAction(false);
     } else if (scrollY?.current > 50 && scrollY?.current > scrollY?.prev) {
       setScrollAction(true);
@@ -39,7 +33,6 @@ const Header = () => {
   React.useEffect(() => {
     return scrollY.onChange(() => update());
   });
-
 
   const variants = {
     // This is the "after scroll" key and it's correlating styles.
@@ -73,42 +66,38 @@ const Header = () => {
       // Basic nav styles.
       style={navStyles}
     >
-      <div style={navLinksWrapper}>
-        {/* React Boostrap navigation component.   */}
-        <Navbar collapseOnSelect expand="lg" className="navbar">
-          <Container>
-            <Navbar.Brand href="/" className="navbar-brand">
-              <p className="logo">| LOGO |</p>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav>
-                <Nav.Link href="/">Home</Nav.Link>
-                <NavDropdown title="Menu Item" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="/">Item 1</NavDropdown.Item>
-                  <NavDropdown.Item href="/">Item 2</NavDropdown.Item>
-                </NavDropdown>
-                <Nav.Link href="/">
-                  Menu Item
-                </Nav.Link>
-                <NavDropdown title="Menu Item" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="/">Item 1</NavDropdown.Item>
-                  <NavDropdown.Item href="/">Item 2</NavDropdown.Item>
-                </NavDropdown>
-              
-              </Nav>
-              <Nav>
-                <Nav.Link href="/">Log In</Nav.Link>
-              </Nav>
-              <Nav>
-                <Nav.Link href="/">
-                  <Button variant="btn btn-outline-secondary">Register</Button>
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      </div>
+      {/* React Boostrap navigation component.   */}
+      <Navbar collapseOnSelect expand="lg" className="navbar">
+        <Container>
+          <Navbar.Brand href="/" className="navbar-brand">
+            <p className="logo">| LOGO |</p>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto"></Nav>
+            <Nav>
+              <Nav.Link href="/">Home</Nav.Link>
+              <NavDropdown title="Menu Item" id="navbarScrollingDropdown">
+                <NavDropdown.Item href="/">Item 1</NavDropdown.Item>
+                <NavDropdown.Item href="/">Item 2</NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href="/">Menu Item</Nav.Link>
+              <NavDropdown title="Menu Item" id="navbarScrollingDropdown">
+                <NavDropdown.Item href="/">Item 1</NavDropdown.Item>
+                <NavDropdown.Item href="/">Item 2</NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Sign In</Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link href="/">
+                <Button variant="btn btn-outline-secondary">Register</Button>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </motion.nav>
   );
 };

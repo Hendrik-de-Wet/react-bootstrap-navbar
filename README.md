@@ -1,4 +1,4 @@
-# React Bootstrap Framer Motion Navigation Bar Demonstration
+# React Bootstrap Framer Motion Navigation Bar (Navbar)
 
 Making a stylish react navigation bar that changes styles on scroll using the Framer Motion library.
 

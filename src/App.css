@@ -23,5 +23,9 @@
 
 .content-placeholder {
   background-image: linear-gradient(rgb(232, 232, 232), rgb(116, 116, 116));
-  height: 2000px;
+  height: 100%;
+}
+
+.content {
+  padding-top: 200px;
 }
