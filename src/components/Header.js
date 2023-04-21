@@ -30,9 +30,9 @@ const Header = () => {
   }
 
   // Update the onChange callback to call for `update()`.
-  React.useEffect(() => {
-    return scrollY.onChange(() => update());
-  });
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    update();
+  })
 
   const variants = {
     // This is the "after scroll" key and it's correlating styles.
