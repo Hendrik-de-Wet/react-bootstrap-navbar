@@ -2,30 +2,5 @@
   text-align: center;
 }
 
-.logo {
-  display: flex;
-  vertical-align: middle;
-  text-align: center;
-}
 
-.navbar {
-  height: 85px;
-  z-index: 10;
-  position: sticky;
-  top: 0;
-}
 
-.navbar-brand {
-  display: inline-block;
-  height: 40px;
-  width: 200px;
-}
-
-.content-placeholder {
-  background-image: linear-gradient(rgb(232, 232, 232), rgb(116, 116, 116));
-  height: 100%;
-}
-
-.content {
-  padding-top: 200px;
-}

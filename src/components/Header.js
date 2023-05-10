@@ -5,12 +5,15 @@ import { Container, Navbar, NavDropdown, Nav, Button } from "react-bootstrap";
 
 // Framer motion library used for animation.
 import { motion, useScroll } from "framer-motion";
+import { useMotionValueEvent } from "framer-motion";
+
+import logo from "../assets/images/logo.png";
 
 const navStyles = {
   position: "fixed",
-  height: "85px",
+  height: "95px",
   width: "100%",
-  backgroundColor: "unset",
+  backgroundColor: "rgba(255, 0, 0, 0.4);",
 };
 
 const Header = () => {
@@ -32,7 +35,7 @@ const Header = () => {
   // Update the onChange callback to call for `update()`.
   useMotionValueEvent(scrollY, "change", (latest) => {
     update();
-  })
+  });
 
   const variants = {
     // This is the "after scroll" key and it's correlating styles.
@@ -43,13 +46,15 @@ const Header = () => {
       backgroundColor: "#FFF",
       boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
       paddingLeft: "10px",
-      paddingTop: "10px",
+      paddingTop: "20px",
+      paddingBottom: "10px",
     },
     // This is the "before scroll" key and it's correlating styles.
     beforeScroll: {
       zIndex: 10,
       opacity: 1,
       y: -10,
+      backgroundColor: "rgba(255, 0, 0, 0.4);",
       height: "100px",
       paddingLeft: "10px",
       paddingTop: "25px",
@@ -70,12 +75,18 @@ const Header = () => {
       <Navbar collapseOnSelect expand="lg" className="navbar">
         <Container>
           <Navbar.Brand href="/" className="navbar-brand">
-            <p className="logo">| LOGO |</p>
+            <p
+              alt=""
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            >
+              <img src={logo} style={{ maxHeight: "45px" }} />
+            </p>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto"></Nav>
-            <Nav>
+            <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <NavDropdown title="Menu Item" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="/">Item 1</NavDropdown.Item>
@@ -87,7 +98,7 @@ const Header = () => {
                 <NavDropdown.Item href="/">Item 2</NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Nav className="mr-auto">
+            <Nav>
               <Nav.Link href="/">Sign In</Nav.Link>
             </Nav>
             <Nav>

@@ -14,7 +14,7 @@ function App() {
       {/* Image used to demonstrate react bootstrap navigation bar with framer motion.  */}
       <div className="content-placeholder">
         <Container className="content">
-          <Row className="justify-content-md-center">
+          <Row className="justify-content-md-center" style={{paddingTop:"150px"}}>
             <Col xs lg="12">
               <h1>
                 React Bootstrap Framer Motion Navigation Bar
