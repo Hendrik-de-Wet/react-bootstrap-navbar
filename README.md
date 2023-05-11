@@ -14,9 +14,6 @@ Read more: https://react-bootstrap.github.io/getting-started/introduction
 npm install framer-motion
 Read more: https://www.framer.com/motion/introduction/
 
-#### Before Scroll Event
-![Navigation Before Scroll](https://github.com/Hendrik-de-Wet/react-bootstrap-navbar/blob/main/public/before.png)
+#### Scroll Event
+![Navigation Before Scroll](https://github.com/Hendrik-de-Wet/react-bootstrap-navbar/blob/main/public/react-bootstrap-navbar.gif)
 
-#### After Scroll Event
-
-![Navigation After Scroll](https://github.com/Hendrik-de-Wet/react-bootstrap-navbar/blob/main/public/after.png)
